@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import 'package:dishinapp/components/tiles/dish_tile.dart';
+=======
+import 'package:dishinapp/screens/settings/settings.dart';
+>>>>>>> Ticket 6 completed🐛
 import 'package:dishinapp/utils/colors.dart';
+import 'package:dishinapp/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,8 +35,14 @@ class _BusinessDishesState extends State<BusinessDishes> {
             actions: [
               Padding(
                 padding: EdgeInsets.only(right: 12.0),
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigation().segue(
+                        page: Settings(), context: context, fullScreen: true);
+                  },
+                  child: CircleAvatar(
+                    backgroundColor: Colors.grey,
+                  ),
                 ),
               )
             ],

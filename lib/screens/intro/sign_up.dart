@@ -16,25 +16,26 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          elevation: 0,
-          leading: IconButton(
-            icon: Icon(
-              Icons.keyboard_arrow_left,
-              color: Colors.black,
-              size: 35,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_left,
+            color: Colors.black,
+            size: 35,
           ),
-          title: Text(
-            'Sign up',
-            style: GoogleFonts.roboto(
-              fontWeight: FontWeight.w600,
-              fontSize: 16,
-              color: Colors.black,
-            ),
-          )),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text(
+          'Sign up',
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
+            color: Colors.black,
+          ),
+        ),
+      ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(

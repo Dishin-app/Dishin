@@ -1,3 +1,4 @@
+import 'package:dishinapp/components/tiles/order_tile.dart';
 import 'package:dishinapp/screens/settings/settings.dart';
 import 'package:dishinapp/utils/colors.dart';
 import 'package:dishinapp/utils/navigation.dart';
@@ -43,6 +44,11 @@ class _ViewOrdersState extends State<ViewOrders> {
               )
             ],
           ),
+          SliverList(delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return OrderTile();
+            },
+          ))
         ],
       ),
     );

@@ -25,10 +25,37 @@ class Landing extends StatelessWidget {
       ),
       backgroundColor: Colors.white,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            color: Colors.red,
+          Expanded(
+            child: Container(
+              width: DeviceSize().getWidth(context),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Lorem',
+                    style: GoogleFonts.roboto(
+                        fontSize: 45,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    'Ipsum',
+                    style: GoogleFonts.roboto(
+                        fontSize: 45,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700),
+                  ),
+                  Text(
+                    'Dolor',
+                    style: GoogleFonts.roboto(
+                        fontSize: 45,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700),
+                  )
+                ],
+              ),
+            ),
           ),
           SafeArea(
             child: Padding(

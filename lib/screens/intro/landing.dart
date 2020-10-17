@@ -79,7 +79,7 @@ class Landing extends StatelessWidget {
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.only(bottom: 50.0),
+              padding: EdgeInsets.only(bottom: 25.0),
               child: Center(
                 child: Container(
                   width: DeviceSize().getWidth(context) * 0.75,

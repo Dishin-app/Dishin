@@ -17,25 +17,26 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          elevation: 0,
-          leading: IconButton(
-            icon: Icon(
-              Icons.keyboard_arrow_down,
-              color: Colors.black,
-              size: 35,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_down,
+            color: Colors.black,
+            size: 35,
           ),
-          title: Text(
-            'Welcome back!',
-            style: GoogleFonts.roboto(
-              fontWeight: FontWeight.w600,
-              fontSize: 16,
-              color: Colors.black,
-            ),
-          )),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Text(
+          'Welcome back!',
+          style: GoogleFonts.roboto(
+            fontWeight: FontWeight.w600,
+            fontSize: 16,
+            color: Colors.black,
+          ),
+        ),
+      ),
       backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.only(

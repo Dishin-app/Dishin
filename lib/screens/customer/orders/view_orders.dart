@@ -1,4 +1,6 @@
+import 'package:dishinapp/screens/settings/settings.dart';
 import 'package:dishinapp/utils/colors.dart';
+import 'package:dishinapp/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,8 +31,14 @@ class _ViewOrdersState extends State<ViewOrders> {
             actions: [
               Padding(
                 padding: EdgeInsets.only(right: 12.0),
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigation().segue(
+                        page: Settings(), context: context, fullScreen: true);
+                  },
+                  child: CircleAvatar(
+                    backgroundColor: Colors.grey,
+                  ),
                 ),
               )
             ],

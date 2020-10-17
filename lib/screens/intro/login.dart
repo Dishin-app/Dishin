@@ -4,6 +4,9 @@ import 'package:dishinapp/utils/device_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../utils/navigation.dart';
+import '../business/business_root.dart';
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -99,7 +102,12 @@ class _LoginState extends State<Login> {
                     width: DeviceSize().getWidth(context) * 0.75,
                     height: 45,
                     child: RaisedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigation().segueToRoot(
+                            page: BusinessRoot(),
+                            context: context,
+                            fullScreen: true);
+                      },
                       color: dishinMainGreen,
                       child: Text(
                         'Login',

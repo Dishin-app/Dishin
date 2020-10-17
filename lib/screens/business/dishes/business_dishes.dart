@@ -1,3 +1,4 @@
+import 'package:dishinapp/components/tiles/dish_tile.dart';
 import 'package:dishinapp/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,6 +35,13 @@ class _BusinessDishesState extends State<BusinessDishes> {
                 ),
               )
             ],
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return DishTile();
+              },
+            ),
           ),
         ],
       ),

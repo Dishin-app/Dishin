@@ -10,6 +10,8 @@ dependencies:
     sdk: flutter
 
   google_fonts: ^1.1.1
+  faker: ^1.2.1
+
 
 dev_dependencies:
   flutter_test:

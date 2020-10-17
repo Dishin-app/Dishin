@@ -1,5 +1,8 @@
+import 'package:dishinapp/screens/intro/login.dart';
+import 'package:dishinapp/screens/intro/sign_up.dart';
 import 'package:dishinapp/utils/colors.dart';
 import 'package:dishinapp/utils/device_size.dart';
+import 'package:dishinapp/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,8 +14,12 @@ class Landing extends StatelessWidget {
         elevation: 0,
         actions: [
           FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigation()
+                  .segue(page: Login(), context: context, fullScreen: true);
+            },
             highlightColor: Colors.transparent,
+            splashColor: Colors.transparent,
             child: Text(
               'Log in',
               style: GoogleFonts.roboto(
@@ -27,33 +34,46 @@ class Landing extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              width: DeviceSize().getWidth(context),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Lorem',
-                    style: GoogleFonts.roboto(
-                        fontSize: 45,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  Text(
-                    'Ipsum',
-                    style: GoogleFonts.roboto(
-                        fontSize: 45,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  Text(
-                    'Dolor',
-                    style: GoogleFonts.roboto(
-                        fontSize: 45,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700),
-                  )
-                ],
+            child: Padding(
+              padding: EdgeInsets.only(
+                right: DeviceSize().getWidth(context) * 0.1,
+                left: DeviceSize().getWidth(context) * 0.1,
+              ),
+              child: Container(
+                width: DeviceSize().getWidth(context),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                        height: 50,
+                        width: 50,
+                        child: Image.asset('images/dishin_logo.png')),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20.0),
+                      child: Text(
+                        'Homecooked.',
+                        style: GoogleFonts.roboto(
+                            fontSize: 45,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                    Text(
+                      'Delivered.',
+                      style: GoogleFonts.roboto(
+                          fontSize: 45,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    Text(
+                      'Dishin.',
+                      style: GoogleFonts.roboto(
+                          fontSize: 45,
+                          color: dishinMainGreen,
+                          fontWeight: FontWeight.w700),
+                    )
+                  ],
+                ),
               ),
             ),
           ),
@@ -65,7 +85,10 @@ class Landing extends StatelessWidget {
                   width: DeviceSize().getWidth(context) * 0.75,
                   height: 45,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigation().segue(
+                          page: SignUp(), context: context, fullScreen: false);
+                    },
                     color: dishinMainGreen,
                     child: Text(
                       'Sign up',

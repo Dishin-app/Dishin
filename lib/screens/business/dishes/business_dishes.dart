@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import 'package:dishinapp/components/tiles/dish_tile.dart';
-=======
 import 'package:dishinapp/screens/settings/settings.dart';
->>>>>>> Ticket 6 completed🐛
 import 'package:dishinapp/utils/colors.dart';
 import 'package:dishinapp/utils/navigation.dart';
 import 'package:flutter/material.dart';

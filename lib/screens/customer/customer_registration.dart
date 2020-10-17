@@ -1,6 +1,8 @@
 import 'package:dishinapp/components/titles/text_field_title.dart';
+import 'package:dishinapp/screens/customer/customer_root.dart';
 import 'package:dishinapp/utils/colors.dart';
 import 'package:dishinapp/utils/device_size.dart';
+import 'package:dishinapp/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -201,7 +203,12 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
                   width: DeviceSize().getWidth(context) * 0.75,
                   height: 45,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigation().segueToRoot(
+                          page: CustomerRoot(),
+                          context: context,
+                          fullScreen: true);
+                    },
                     color: dishinMainGreen,
                     child: Text(
                       'Create an account',

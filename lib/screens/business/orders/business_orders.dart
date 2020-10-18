@@ -4,6 +4,8 @@ import 'package:dishinapp/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../components/tiles/order_tile.dart';
+
 class BusinessOrders extends StatefulWidget {
   BusinessOrders({Key key}) : super(key: key);
 
@@ -43,6 +45,13 @@ class _BusinessOrdersState extends State<BusinessOrders> {
               )
             ],
           ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return OrderTile();
+              },
+            ),
+          )
         ],
       ),
     );

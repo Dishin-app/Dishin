@@ -167,6 +167,7 @@ class _SignUpState extends State<SignUp> {
 
   void startLoading() {
     setState(() {
+      FocusScope.of(context).unfocus();
       isLoading = true;
     });
   }

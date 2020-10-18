@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "272139208283",
+    "firebase_url": "https://hacknc-49d20.firebaseio.com",
+    "project_id": "hacknc-49d20",
+    "storage_bucket": "hacknc-49d20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272139208283:android:a908da135592340cc7a17e",
+        "android_client_info": {
+          "package_name": "fidelhen.dishinapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272139208283-julrbhracs0r8dc74qo240o2fpau7eu9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-NYxXFfXbImAdnu3ih84dulufWftfUKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272139208283-julrbhracs0r8dc74qo240o2fpau7eu9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "272139208283-9te1vhomb2pmnkef9ok9rfodk50ksihn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "adawong.dishinapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

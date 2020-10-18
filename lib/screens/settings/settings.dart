@@ -1,10 +1,9 @@
-import 'package:dishinapp/screens/intro/landing.dart';
+import 'package:dishinapp/utils/auth.dart';
 import 'package:dishinapp/utils/colors.dart';
-import 'package:dishinapp/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Settings extends StatelessWidget {
+class SettingsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,8 +40,7 @@ class Settings extends StatelessWidget {
                   color: Colors.white,
                   child: ListTile(
                     onTap: () {
-                      Navigation().segueToRoot(
-                          page: Landing(), context: context, fullScreen: true);
+                      Auth().logout(context: context);
                     },
                     trailing: Icon(
                       Icons.logout,

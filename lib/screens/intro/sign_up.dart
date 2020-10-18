@@ -35,7 +35,9 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return LoadingOverlay(
       isLoading: isLoading,
-      progressIndicator: SpinProgressIndicator(),
+      progressIndicator: SpinProgressIndicator(
+        isDark: false,
+      ),
       opacity: 0.5,
       color: Colors.black,
       child: Scaffold(
@@ -76,7 +78,6 @@ class _SignUpState extends State<SignUp> {
                   TextField(
                     keyboardType: TextInputType.emailAddress,
                     controller: emailController,
-                    textInputAction: TextInputAction.next,
                     onSubmitted: (value) {},
                     keyboardAppearance: Brightness.light,
                     style: GoogleFonts.openSans(
@@ -94,7 +95,6 @@ class _SignUpState extends State<SignUp> {
                     keyboardType: TextInputType.visiblePassword,
                     controller: passwordController,
                     obscureText: true,
-                    textInputAction: TextInputAction.done,
                     style: GoogleFonts.openSans(
                         fontWeight: FontWeight.w600, fontSize: 14),
                     cursorColor: Colors.blue,
@@ -110,7 +110,6 @@ class _SignUpState extends State<SignUp> {
                   textFieldTitle(title: 'Confirm password'),
                   TextField(
                     keyboardType: TextInputType.visiblePassword,
-                    textInputAction: TextInputAction.done,
                     obscureText: true,
                     controller: confirmPasswordController,
                     style: GoogleFonts.openSans(

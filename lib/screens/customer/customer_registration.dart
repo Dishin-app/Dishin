@@ -6,6 +6,7 @@ import 'package:dishinapp/components/titles/text_field_title.dart';
 import 'package:dishinapp/screens/customer/customer_root.dart';
 import 'package:dishinapp/utils/colors.dart';
 import 'package:dishinapp/utils/device_size.dart';
+import 'package:dishinapp/utils/enums.dart';
 import 'package:dishinapp/utils/navigation.dart';
 import 'package:dishinapp/utils/user.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -48,7 +49,9 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
   Widget build(BuildContext context) {
     return LoadingOverlay(
       isLoading: isLoading,
-      progressIndicator: SpinProgressIndicator(),
+      progressIndicator: SpinProgressIndicator(
+        isDark: false,
+      ),
       opacity: 0.5,
       color: Colors.black,
       child: Scaffold(
@@ -304,7 +307,8 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
       'street_address': streetAddressController.text ?? '',
       'city': cityController.text ?? '',
       'state': stateController.text ?? '',
-      'zip': zipController.text ?? ''
+      'zip': zipController.text ?? '',
+      'role': UserType.Customer.toString(),
     }).then((value) {
       setState(() {
         isLoading = false;

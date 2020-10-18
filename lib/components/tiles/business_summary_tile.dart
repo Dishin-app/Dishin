@@ -1,11 +1,16 @@
+import 'package:dishinapp/model/homecook.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../utils/colors.dart';
 import 'info_tile.dart';
 
 class BusinessSummaryTile extends StatelessWidget {
+  BusinessSummaryTile({@required this.homecook});
+
   //Variables
   final Color lineGrey = Colors.grey[200];
+  final Homecook homecook;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -75,7 +80,7 @@ class BusinessSummaryTile extends StatelessWidget {
           ),
           InfoTile(
               title: 'Type of Food',
-              trailing: 'Mexican Food',
+              trailing: homecook.typeOfFood,
               onPressed: () {}),
           Padding(
             padding: EdgeInsets.only(right: 20.0, left: 20),

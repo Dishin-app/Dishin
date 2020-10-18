@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ViewOrders extends StatefulWidget {
-  ViewOrders({Key key}) : super(key: key);
-
   @override
   _ViewOrdersState createState() => _ViewOrdersState();
 }
@@ -35,10 +33,14 @@ class _ViewOrdersState extends State<ViewOrders> {
                 child: GestureDetector(
                   onTap: () {
                     Navigation().segue(
-                        page: Settings(), context: context, fullScreen: true);
+                        page: SettingsView(),
+                        context: context,
+                        fullScreen: true);
                   },
                   child: CircleAvatar(
                     backgroundColor: Colors.grey,
+                    backgroundImage: NetworkImage(
+                        'https://source.unsplash.com/1600x900/?female,portrait'),
                   ),
                 ),
               )

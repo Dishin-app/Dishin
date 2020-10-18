@@ -25,9 +25,13 @@
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Meta needs permission to get images from your library</string>
+	<string>Dishin needs permission to get images from your library</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Meta needs permission to take pictures</string>
+	<string>Dishin needs permission to take pictures</string>
+	<key>NSLocationAlwaysUsageDescription</key>	
+	<string>Dishin needs your location to recommend homecooks</string>	
+	<key>NSLocationWhenInUseUsageDescription</key>	
+	<string>Dishin needs your location to recommend homecooks</string>	
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

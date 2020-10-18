@@ -2,12 +2,18 @@ import 'package:dishinapp/components/modal/cart_modal.dart';
 import 'package:dishinapp/components/modal/item_info_modal.dart';
 import 'package:dishinapp/components/tiles/business_summary_tile.dart';
 import 'package:dishinapp/components/tiles/product_tile.dart';
+import 'package:dishinapp/model/homecook.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../utils/colors.dart';
 import '../../../utils/device_size.dart';
 
 class HomecookSummary extends StatefulWidget {
+  HomecookSummary({@required this.homecook});
+
+  //Variables
+  final Homecook homecook;
+
   @override
   _HomecookSummaryState createState() => _HomecookSummaryState();
 }
@@ -75,7 +81,7 @@ class _HomecookSummaryState extends State<HomecookSummary> {
                           width: DeviceSize().getWidth(context),
                           height: 200 + MediaQuery.of(context).padding.top,
                           child: Image.network(
-                            "https://source.unsplash.com/1600x900/?fish",
+                            widget.homecook.backgroundImage,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -90,7 +96,7 @@ class _HomecookSummaryState extends State<HomecookSummary> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  homecookName,
+                                  widget.homecook.name,
                                   style: GoogleFonts.roboto(
                                       fontWeight: FontWeight.w900,
                                       color: Colors.white,
@@ -108,7 +114,9 @@ class _HomecookSummaryState extends State<HomecookSummary> {
                   padding: EdgeInsets.only(top: 8),
                 ),
                 SliverToBoxAdapter(
-                  child: BusinessSummaryTile(),
+                  child: BusinessSummaryTile(
+                    homecook: widget.homecook,
+                  ),
                 ),
                 SliverGrid(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

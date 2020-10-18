@@ -34,7 +34,9 @@ class _BusinessDishesState extends State<BusinessDishes> {
                 child: GestureDetector(
                   onTap: () {
                     Navigation().segue(
-                        page: Settings(), context: context, fullScreen: true);
+                        page: SettingsView(),
+                        context: context,
+                        fullScreen: true);
                   },
                   child: CircleAvatar(
                     backgroundColor: Colors.grey,

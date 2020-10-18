@@ -1,8 +1,11 @@
+import 'dart:io';
 import 'package:dishinapp/components/titles/text_field_title.dart';
 import 'package:dishinapp/screens/customer/customer_root.dart';
 import 'package:dishinapp/utils/colors.dart';
 import 'package:dishinapp/utils/device_size.dart';
 import 'package:dishinapp/utils/navigation.dart';
+import 'package:dishinapp/utils/user.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,6 +17,29 @@ class CustomerRegistration extends StatefulWidget {
 }
 
 class _CustomerRegistrationState extends State<CustomerRegistration> {
+  //Variables
+  TextEditingController nameController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController streetAddressController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
+  TextEditingController zipController = TextEditingController();
+
+  File profileImage;
+
+  @override
+  void dispose() {
+    //Variables
+    nameController.dispose();
+    phoneNumberController.dispose();
+    streetAddressController.dispose();
+    cityController.dispose();
+    stateController.dispose();
+    zipController.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,12 +78,16 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
                                 child: CircleAvatar(
                                   radius: 45,
                                   backgroundColor: Colors.grey,
+                                  backgroundImage: profileImage != null
+                                      ? FileImage(profileImage)
+                                      : null,
                                 ),
                               ),
                               textFieldTitle(title: 'Name'),
                               TextField(
-                                keyboardType: TextInputType.visiblePassword,
+                                keyboardType: TextInputType.name,
                                 textInputAction: TextInputAction.done,
+                                controller: nameController,
                                 style: GoogleFonts.openSans(
                                     fontWeight: FontWeight.w600, fontSize: 14),
                                 cursorColor: Colors.blue,
@@ -72,7 +102,7 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
                               ),
                               textFieldTitle(title: 'Phone number'),
                               TextField(
-                                keyboardType: TextInputType.visiblePassword,
+                                keyboardType: TextInputType.phone,
                                 textInputAction: TextInputAction.done,
                                 style: GoogleFonts.openSans(
                                     fontWeight: FontWeight.w600, fontSize: 14),
@@ -88,7 +118,8 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
                               ),
                               textFieldTitle(title: 'Street address'),
                               TextField(
-                                keyboardType: TextInputType.visiblePassword,
+                                keyboardType: TextInputType.streetAddress,
+                                controller: streetAddressController,
                                 textInputAction: TextInputAction.done,
                                 style: GoogleFonts.openSans(
                                     fontWeight: FontWeight.w600, fontSize: 14),
@@ -104,7 +135,7 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
                               ),
                               textFieldTitle(title: 'City'),
                               TextField(
-                                keyboardType: TextInputType.visiblePassword,
+                                controller: cityController,
                                 textInputAction: TextInputAction.done,
                                 style: GoogleFonts.openSans(
                                     fontWeight: FontWeight.w600, fontSize: 14),
@@ -127,8 +158,7 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
                                         children: [
                                           textFieldTitle(title: 'State'),
                                           TextField(
-                                            keyboardType:
-                                                TextInputType.visiblePassword,
+                                            controller: stateController,
                                             textInputAction:
                                                 TextInputAction.done,
                                             style: GoogleFonts.openSans(
@@ -158,8 +188,7 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
                                         children: [
                                           textFieldTitle(title: 'Zip code'),
                                           TextField(
-                                            keyboardType:
-                                                TextInputType.visiblePassword,
+                                            controller: stateController,
                                             textInputAction:
                                                 TextInputAction.done,
                                             style: GoogleFonts.openSans(
@@ -225,5 +254,30 @@ class _CustomerRegistrationState extends State<CustomerRegistration> {
         ],
       ),
     );
+  }
+
+  //Functions
+  Future<void> uploadInfo() async {
+    //Variables
+    String imageUrl;
+    String uid = User().getUid();
+
+    //Firebase Storage
+    if (profileImage != null) {
+      final StorageReference storageRef =
+          FirebaseStorage.instance.ref().child('users/$uid/profile_image.jpg');
+      final StorageUploadTask uploadTask = storageRef.putFile(profileImage);
+      final StorageTaskSnapshot completed = await uploadTask.onComplete;
+
+      await completed.ref.getDownloadURL().then((url) {
+        imageUrl = url;
+      });
+    }
+  }
+
+  void getImageCallback({File image}) {
+    setState(() {
+      profileImage = image;
+    });
   }
 }

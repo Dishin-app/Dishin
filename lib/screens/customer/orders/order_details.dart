@@ -40,6 +40,14 @@ class _OrderDetailsState extends State<OrderDetails> {
                 color: Colors.black,
               ),
             ),
+            actions: [
+              IconButton(
+                  icon: Icon(
+                    Icons.phone,
+                    color: dishinMainGreen,
+                  ),
+                  onPressed: () {}),
+            ],
           ),
           SliverToBoxAdapter(
               child: OrderStatusTile(

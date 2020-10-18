@@ -52,7 +52,7 @@ class Settings extends StatelessWidget {
                       'Logout',
                       style: GoogleFonts.roboto(
                         fontWeight: FontWeight.w600,
-                        fontSize: 16,
+                        fontSize: 15,
                         color: Colors.red,
                       ),
                     ),

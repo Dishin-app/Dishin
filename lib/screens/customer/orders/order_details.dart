@@ -1,4 +1,8 @@
+import 'package:dishinapp/components/tiles/info_tile.dart';
+import 'package:dishinapp/components/tiles/order_status_tile.dart';
+import 'package:dishinapp/components/tiles/product_tile.dart';
 import 'package:dishinapp/utils/colors.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,6 +40,47 @@ class _OrderDetailsState extends State<OrderDetails> {
                 color: Colors.black,
               ),
             ),
+          ),
+          SliverToBoxAdapter(
+              child: OrderStatusTile(
+            isBusiness: false,
+          )),
+          SliverPadding(
+            padding: EdgeInsets.only(top: 8),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              color: Colors.white,
+              child: InfoTile(
+                  title: 'Notes',
+                  trailing: Faker().lorem.sentence(),
+                  onPressed: () {}),
+            ),
+          ),
+          SliverPadding(
+            padding: EdgeInsets.only(top: 8),
+          ),
+          SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
+            delegate:
+                SliverChildBuilderDelegate((BuildContext context, int index) {
+              if (index % 2 == 1) {
+                return Padding(
+                  padding: EdgeInsets.fromLTRB(4, 8, 20, 0),
+                  child: ProductTile(
+                    onPressed: () {},
+                  ),
+                );
+              }
+              return Padding(
+                padding: EdgeInsets.fromLTRB(20, 8, 4, 0),
+                child: ProductTile(
+                  onPressed: () {},
+                ),
+              );
+            }, childCount: 5),
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate(

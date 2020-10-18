@@ -6,6 +6,8 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../components/tiles/order_tile.dart';
+
 class OrderDetails extends StatefulWidget {
   @override
   _OrderDetailsState createState() => _OrderDetailsState();
@@ -80,6 +82,13 @@ class _OrderDetailsState extends State<OrderDetails> {
               );
             }, childCount: 5),
           ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return OrderTile();
+              },
+            ),
+          )
         ],
       ),
     );

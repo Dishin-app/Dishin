@@ -1,6 +1,10 @@
 import 'package:dishinapp/utils/device_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../utils/device_size.dart';
 
 class InfoTile extends StatelessWidget {
   //Constructor

@@ -81,7 +81,7 @@ class OrderTile extends StatelessWidget {
                       style: GoogleFonts.roboto(
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
-                          color: outForDeliveryBlue),
+                          color: transportingBlue),
                     )
                   ],
                 ),

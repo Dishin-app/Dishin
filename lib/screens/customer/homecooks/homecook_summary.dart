@@ -1,3 +1,5 @@
+import 'package:dishinapp/components/modal/cart_modal.dart';
+import 'package:dishinapp/components/modal/item_info_modal.dart';
 import 'package:dishinapp/components/tiles/business_summary_tile.dart';
 import 'package:dishinapp/components/tiles/product_tile.dart';
 import 'package:flutter/material.dart';
@@ -118,14 +120,18 @@ class _HomecookSummaryState extends State<HomecookSummary> {
                       return Padding(
                         padding: EdgeInsets.fromLTRB(4, 8, 20, 0),
                         child: ProductTile(
-                          onPressed: () {},
+                          onPressed: () {
+                            showItemInfoModal(context: context);
+                          },
                         ),
                       );
                     }
                     return Padding(
                       padding: EdgeInsets.fromLTRB(20, 8, 4, 0),
                       child: ProductTile(
-                        onPressed: () {},
+                        onPressed: () {
+                          showItemInfoModal(context: context);
+                        },
                       ),
                     );
                   }, childCount: 5),
@@ -143,7 +149,9 @@ class _HomecookSummaryState extends State<HomecookSummary> {
                   width: DeviceSize().getWidth(context) * 0.75,
                   height: 45,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showCartModal(context: context);
+                    },
                     color: dishinMainGreen,
                     child: Text(
                       'Cart',

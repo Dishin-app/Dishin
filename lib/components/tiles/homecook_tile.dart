@@ -1,7 +1,10 @@
+import 'package:dishinapp/screens/customer/homecooks/homecook_summary.dart';
 import 'package:dishinapp/utils/device_size.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../utils/navigation.dart';
 
 class HomecookTile extends StatelessWidget {
   //Constructor
@@ -12,7 +15,10 @@ class HomecookTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigation().segue(
+            page: HomecookSummary(), context: context, fullScreen: false);
+      },
       child: Padding(
         padding: EdgeInsets.only(top: 8.0),
         child: Column(

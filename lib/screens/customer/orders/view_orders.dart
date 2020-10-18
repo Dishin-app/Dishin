@@ -44,11 +44,13 @@ class _ViewOrdersState extends State<ViewOrders> {
               )
             ],
           ),
-          SliverList(delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return OrderTile();
-            },
-          ))
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return OrderTile();
+              },
+            ),
+          )
         ],
       ),
     );

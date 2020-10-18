@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>272139208283-9te1vhomb2pmnkef9ok9rfodk50ksihn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.272139208283-9te1vhomb2pmnkef9ok9rfodk50ksihn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD299PSE4Bqhzb95I8RSXkrRP7KO3j9uuI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>272139208283</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>adawong.dishinapp</string>
+	<key>PROJECT_ID</key>
+	<string>hacknc-49d20</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hacknc-49d20.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:272139208283:ios:4e1eb252032e5b42c7a17e</string>
+	<key>DATABASE_URL</key>
+	<string>https://hacknc-49d20.firebaseio.com</string>
+</dict>
+</plist>
